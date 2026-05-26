@@ -9,7 +9,7 @@ class PesertaController extends Controller
 {
     public function index()
     {
-        $pesertas = Peserta::latest()->get();
+        $pesertas = Peserta::latest()->paginate(10); // Pakai paginate agar rapi
         return view('peserta.index', compact('pesertas'));
     }
 }
