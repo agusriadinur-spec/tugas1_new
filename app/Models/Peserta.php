@@ -10,6 +10,12 @@ class Peserta extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nama', 'umur', 'kategori', 'nomor_telp', 'pengalaman'
+        'nama',
+        'umur',
+        'jenis_kelamin',
+        'no_hp',
+        'email',
+        'kategori',
+        'status'
     ];
 }
