@@ -13,7 +13,6 @@ class PesertaController extends Controller
         return view('peserta.index', compact('pesertas'));
     }
 
-    // ================== CREATE ==================
     public function create()
     {
         return view('peserta.create');
@@ -35,5 +34,13 @@ class PesertaController extends Controller
         return redirect()->route('peserta.index')
                          ->with('success', 'Peserta audisi berhasil ditambahkan!');
     }
-    // ============================================
+
+    // DELETE
+    public function destroy(Peserta $peserta)
+    {
+        $peserta->delete();
+
+        return redirect()->route('peserta.index')
+                         ->with('success', 'Peserta berhasil dihapus!');
+    }
 }
